@@ -16,10 +16,16 @@ public class DemoController {
 		myCoach = theCoach;
 	}
 	
+	@GetMapping("/")
+	public String getDefaultMethod() {
+		return "Welcome to spring core demo app";
+	}
 	
 	@GetMapping("/dailyworkout")
 	public String getDailyWorkout() {
 		return myCoach.getDailyWorkout();
 	}
+	
+	
 	
 }
