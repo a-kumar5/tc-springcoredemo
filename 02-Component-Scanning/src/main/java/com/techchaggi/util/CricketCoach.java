@@ -1,4 +1,4 @@
-package com.techchaggi.springcoredemo.common;
+package com.techchaggi.util;
 
 import org.springframework.stereotype.Component;
 

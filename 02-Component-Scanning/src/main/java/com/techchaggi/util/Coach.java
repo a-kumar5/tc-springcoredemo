@@ -1,4 +1,4 @@
-package com.techchaggi.springcoredemo.common;
+package com.techchaggi.util;
 
 public interface Coach {
 	String getDailyWorkout();
