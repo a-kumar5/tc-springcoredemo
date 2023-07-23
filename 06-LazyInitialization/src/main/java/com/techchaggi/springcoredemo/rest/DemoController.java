@@ -12,12 +12,13 @@ public class DemoController {
 	// define a private field for the dependency
 	// @Autowired - for field injection
 	private Coach myCoach;
-
+	private Coach anotherCoach;
 	// define a constructor for dependency injection
 
 	@Autowired
-	public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
+	public DemoController(@Qualifier("cricketCoach") Coach theCoach, @Qualifier("cricketCoach") Coach theAnotherCoach) {
 		myCoach = theCoach;
+		anotherCoach = theAnotherCoach;
 	}
 
 	// You can name the method to any name not necessarily setters.
@@ -28,6 +29,12 @@ public class DemoController {
 	@GetMapping("/")
 	public String getDefaultMethod() {
 		return "Welcome to spring core demo app";
+	}
+	
+	// to return the bean scope
+	@GetMapping("/beanscope")
+	public String getScope() {
+		return "Comparing beans: myCoach == anotherCoach, " + (myCoach == anotherCoach);
 	}
 
 	@GetMapping("/dailyworkout")
