@@ -8,18 +8,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
 	// define a private field for the dependency
-	@Autowired
+	// @Autowired - for field injection
 	private Coach myCoach;
 
 	// define a constructor for dependency injection
 	/*
 	 * @Autowired public DemoController(Coach theCoach) { myCoach = theCoach; }
 	 */
-	
-	//You can name the method to any name not necessarily setters.
-	/*
-	 * @Autowired public void setCoach(Coach theCoach) { myCoach = theCoach; }
-	 */
+
+	// You can name the method to any name not necessarily setters.
+
+	@Autowired
+	public void setCoach(Coach theCoach) {
+		myCoach = theCoach;
+	}
 
 	@GetMapping("/")
 	public String getDefaultMethod() {
