@@ -9,7 +9,7 @@ import com.techchaggi.springcoredemo.common.SwimCoach;
 @Configuration
 public class SportConfig {
 	
-	@Bean
+	@Bean("aquatic")
 	public Coach swimCoach() {
 		return new SwimCoach();
 	}
